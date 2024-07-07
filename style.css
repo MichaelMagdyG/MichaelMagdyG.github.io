@@ -1,14 +1,18 @@
+/* Basic Styles */
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f8f9fa; /* Light gray background */
+  color: #333;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 header {
-  background-color: #333;
+  background-color: #212529; /* Darker gray for header */
   color: #fff;
   padding: 20px 0;
+  position: relative;
 }
 
 .container {
@@ -18,6 +22,26 @@ header {
 }
 
 h1, h2, h3, h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  /* Make the title white */
+  color: #fff;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.header-content {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -37,11 +61,24 @@ nav li {
 nav a {
   color: #fff;
   text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-section {
+nav a:hover {
+  background-color: #555;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.section {
   padding: 40px 0;
-  background-color: #fff;
+  background-color: #fff; /* White background for sections */
+  border-bottom: 1px solid #ddd;
+}
+
+.section-header {
+  margin-bottom: 30px;
 }
 
 .experience-item, .project-item, .education-item {
@@ -71,4 +108,104 @@ footer {
       display: block;
       margin: 10px 0;
   }
+}
+
+/* Mouse Hover Effect */
+nav a {
+  cursor: pointer;
+  /* Add a cursor for a mouse hover effect */
+}
+
+nav a:hover {
+  /* Add a subtle background color change on hover */
+  background-color: rgba(0, 0, 0, 0.1); 
+  /* Adjust the opacity as needed */
+}
+
+/* Professional Theme Adjustments */
+body {
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+header {
+  background-color: #212529; /* Darker gray for header */
+}
+
+h1, h2, h3 {
+  color: #212529; /* Dark gray for headings */
+}
+
+nav a {
+  color: #fff; /* White text for navigation */
+}
+
+/* Add more styles to personalize the theme further */
+
+/* Smooth Scroll */
+a[href^="#"] {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+a[href^="#"]:hover {
+  color: #fff;
+}
+
+a[href^="#"]:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+a[href^="#"]:hover:after {
+  transform: scaleX(1);
+}
+
+/* Background Image and Gradient */
+.section {
+  background-image: url("your_background_image.jpg"); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+  z-index: -1; /* Place it behind the content */
+}
+
+.container {
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+/* Additional Stylings */
+.experience-item ul {
+  margin-bottom: 10px;
+}
+
+.project-item ul {
+  margin-bottom: 10px;
+}
+
+.education-item ul {
+  margin-bottom: 10px;
+}
+
+/* Style for title 'Michael Magdy - Portfolio' */
+header h1 {
+  color: white; /* White text for title */
 }
