@@ -26,6 +26,12 @@
         </nav>
       </div>
       <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    
+        // Disable Ctrl+C
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && (e.key === 'c' || e.key === 'C')) {
                 e.preventDefault();
@@ -36,6 +42,7 @@
         });
     </script>
     
+
     </header>
 
     <section id="about" class="section">
