@@ -1,4 +1,4 @@
-/* Basic Styles */
+/* Reset and Basic Styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -8,10 +8,12 @@ body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
+/* Header Styling */
 header {
   background-color: #212529; /* Darker gray for header */
   color: #fff;
   padding: 20px 0;
+  text-align: center; /* Center align text */
   position: relative;
   background-image: url("https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"); /* Replace with your image */
   background-size: cover;
@@ -19,13 +21,15 @@ header {
   background-repeat: no-repeat;
 }
 
+/* Container Styles */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-h1, h2, h3, h4 {
+/* Heading Styles */
+h1, h2, h3 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 600;
@@ -33,26 +37,17 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 2.5rem;
-  /* Make the title white */
-  color: #fff;
+  color: #fff; /* White text for title */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for emphasis */
 }
 
 h2 {
-  font-size: 2rem;
-  color: #212529; /* Dark gray for headings */
-}
-
-h3 {
   font-size: 1.5rem;
-  color: #212529; /* Dark gray for headings */
+  color: #ffc107; /* Yellow color for subtitle */
+  margin-top: 10px; /* Space between title and subtitle */
 }
 
-.header-content {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
+/* Navigation Styles */
 nav ul {
   list-style: none;
   padding: 0;
@@ -78,111 +73,13 @@ nav a:hover {
   transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
+/* Section Styles */
 .section {
   padding: 40px 0;
   background-color: #fff; /* White background for sections */
   border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
-
-.section-header {
-  margin-bottom: 30px;
-}
-
-.experience-item, .project-item, .education-item {
-  margin-bottom: 30px;
-}
-
-.experience-item ul, .project-item ul, .education-item ul {
-  list-style: disc;
-  padding-left: 20px;
-  margin-bottom: 0;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-}
-
-/* Style for mobile devices */
-@media screen and (max-width: 768px) {
-  nav ul {
-      text-align: left;
-  }
-
-  nav li {
-      display: block;
-      margin: 10px 0;
-  }
-}
-
-/* Mouse Hover Effect */
-nav a {
-  cursor: pointer;
-  /* Add a cursor for a mouse hover effect */
-}
-
-nav a:hover {
-  /* Add a subtle background color change on hover */
-  background-color: rgba(0, 0, 0, 0.1); 
-  /* Adjust the opacity as needed */
-}
-
-/* Professional Theme Adjustments */
-body {
-  background-color: #f8f9fa; /* Light gray background */
-}
-
-header {
-  background-color: #212529; /* Darker gray for header */
-}
-
-h1, h2, h3 {
-  color: #212529; /* Dark gray for headings */
-}
-
-nav a {
-  color: #fff; /* White text for navigation */
-}
-
-/* Add more styles to personalize the theme further */
-
-/* Smooth Scroll */
-a[href^="#"] {
-  display: inline-block;
   position: relative;
-  text-decoration: none;
-}
-
-a[href^="#"]:hover {
-  color: #fff;
-}
-
-a[href^="#"]:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-a[href^="#"]:hover:after {
-  transform: scaleX(1);
-}
-
-/* Background Image and Gradient */
-.section {
-  /*background-image: url("your_background_image.jpg"); */ /* Replace with your image */
-  /*background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;*/
 }
 
 .section::before {
@@ -196,119 +93,18 @@ a[href^="#"]:hover:after {
   z-index: -1; /* Place it behind the content */
 }
 
-.container {
-  z-index: 1; /* Ensure content is above the overlay */
-}
-
-/* Additional Stylings */
-.experience-item ul {
-  margin-bottom: 10px;
-}
-
-.project-item ul {
-  margin-bottom: 10px;
-}
-
-.education-item ul {
-  margin-bottom: 10px;
-}
-
-/* Style for title 'Michael Magdy - Portfolio' */
-header h1 {
-  color: white; /* White text for title */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for emphasis */
-}
-
-/* Style for WhatsApp, Outlook, and LinkedIn Icons */
-.whatsapp-icon, .outlook-icon, .linkedin-icon {
-  width: 30px; /* Adjust the size as needed */
-  height: 30px; /* Adjust the size as needed */
-  margin: 0 10px; /* Add some spacing between icons */
-}
-
-/* Additional Stylings */
-.experience-item ul {
-  margin-bottom: 10px;
-}
-
-.project-item ul {
-  margin-bottom: 10px;
-}
-
-.education-item ul {
-  margin-bottom: 10px;
-}
-
-/* Smooth Scrolling */
-a[href^="#"] {
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-}
-
-a[href^="#"]:hover {
+/* Footer Styles */
+footer {
+  background-color: #333;
   color: #fff;
-}
-
-a[href^="#"]:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-a[href^="#"]:hover:after {
-  transform: scaleX(1);
-}
-
-/* Project Item Styling */
-.project-item {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  background-color: #f8f9fa; /* Light gray background */
-}
-
-/* Additional Styling */
-.project-item h4 {
-  font-size: 1.2rem;
-  color: #212529; /* Dark gray for headings */
-  margin-top: 0;
-}
-
-/* Contact Icons Styling */
-.whatsapp-icon, .outlook-icon, .linkedin-icon {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px;
-  vertical-align: middle;
-}
-
-/* Contact Information Styling */
-#contact p {
   text-align: center;
-  margin-top: 20px;
+  padding: 10px 0;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   .container {
     padding: 10px;
-  }
-
-  .section-header {
-    margin-bottom: 20px;
-  }
-
-  .experience-item, .project-item, .education-item {
-    margin-bottom: 20px;
   }
 
   nav ul {
