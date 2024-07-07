@@ -26,10 +26,16 @@
         </nav>
       </div>
       <script>
-        document.addEventListener("contextmenu", function (e) {
-          e.preventDefault();
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'C')) {
+                e.preventDefault();
+                alert("Copying is disabled on this website.");
+                // Optionally, you can prevent the alert from blocking further default action
+                return false;
+            }
         });
-      </script>
+    </script>
+    
     </header>
 
     <section id="about" class="section">
