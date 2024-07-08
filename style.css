@@ -1,6 +1,6 @@
 /* Reset and Basic Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f8f9fa; /* Light gray background */
@@ -49,7 +49,9 @@ header {
 }
 
 /* Heading Styles */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 600;
@@ -105,7 +107,7 @@ nav a:hover {
 }
 
 .section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -166,4 +168,3 @@ footer {
 .social-icons img:hover {
   transform: scale(1.2); /* Increase size on hover */
 }
-
