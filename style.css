@@ -142,3 +142,28 @@ footer {
     margin: 10px 0;
   }
 }
+.social-icons {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 15px; /* Adjust spacing between icons */
+}
+
+.social-icons li:last-child {
+  margin-right: 0; /* Remove margin from the last icon to avoid extra space */
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2); /* Increase size on hover */
+}
+
