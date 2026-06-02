@@ -8,8 +8,7 @@ document.addEventListener("contextmenu", function (e) {
 document.addEventListener("keydown", function (e) {
   if (e.ctrlKey && (e.key === "c" || e.key === "C")) {
     e.preventDefault();
-    alert("Copying is disabled on this website.");
-    // Optionally, you can prevent the alert from blocking further default action
+   // alert("Copying is disabled on this website.");
     return false;
   }
 });
