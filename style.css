@@ -1,11 +1,66 @@
 /* Reset and Basic Styles */
+:root {
+  --bg: #f8f9fa;
+  --text: #333;
+  --header-bg: #212529;
+  --section-bg: #fff;
+  --section-border: #ddd;
+  --section-shadow: rgba(0, 0, 0, 0.1);
+  --section-overlay: rgba(0, 0, 0, 0.4);
+  --footer-bg: #333;
+  --footer-text: #fff;
+  --nav-hover: #555;
+  --toggle-bg: rgba(255, 255, 255, 0.15);
+  --toggle-border: rgba(255, 255, 255, 0.35);
+  --toggle-color: #fff;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa; /* Light gray background */
-  color: #333;
+  background-color: var(--bg);
+  color: var(--text);
   overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e5e5e5;
+}
+
+body.dark-mode header {
+  background-color: #0f1113;
+}
+
+body.dark-mode .section {
+  background-color: #1d1f25;
+  border-color: #2a2d33;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .section::before {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode footer {
+  background-color: #090a0c;
+  color: #dcdcdc;
+}
+
+body.dark-mode nav a {
+  color: #e5e5e5;
+}
+
+body.dark-mode nav a:hover {
+  background-color: #333;
+  color: #ffc107;
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffc107;
 }
 
 /* Custom Scrollbar Styles */
@@ -91,9 +146,32 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #555;
+  background-color: var(--nav-hover);
   transform: scale(1.1); /* Slightly enlarge on hover */
   color: #ffc107; /* Change text color on hover */
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--toggle-border);
+  border-radius: 50%;
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, color 0.3s;
+  font-size: 1.1rem;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* Section Styles */
