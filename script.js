@@ -25,5 +25,29 @@ navLinks.forEach((link) => {
   });
 });
 
+// Dark/light mode toggle
+const themeToggle = document.getElementById("theme-toggle");
+const storedTheme = localStorage.getItem("theme");
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.classList.toggle("dark-mode", isDark);
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+  themeToggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+  localStorage.setItem("theme", theme);
+}
+
+if (storedTheme) {
+  applyTheme(storedTheme);
+} else {
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(prefersDark ? "dark" : "light");
+}
+
+themeToggle.addEventListener("click", () => {
+  const nextTheme = document.body.classList.contains("dark-mode") ? "light" : "dark";
+  applyTheme(nextTheme);
+});
+
 // Get current year for footer
 document.getElementById("currentYear").textContent = new Date().getFullYear();
