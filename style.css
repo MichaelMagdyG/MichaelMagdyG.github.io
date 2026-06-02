@@ -103,6 +103,13 @@ header {
   padding: 0 20px;
 }
 
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 /* Heading Styles */
 h1,
 h2,
@@ -125,11 +132,17 @@ h2 {
 }
 
 /* Navigation Styles */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 nav li {
@@ -152,9 +165,7 @@ nav a:hover {
 }
 
 .theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: static;
   width: 42px;
   height: 42px;
   display: flex;
