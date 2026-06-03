@@ -1,18 +1,3 @@
-// Disable right-click
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-//  alert("Right Click is disabled on this website.");
-});
-
-// Disable Ctrl+C
-document.addEventListener("keydown", function (e) {
-  if (e.ctrlKey && (e.key === "c" || e.key === "C")) {
-    e.preventDefault();
-   // alert("Copying is disabled on this website.");
-    return false;
-  }
-});
-
 // Smooth scrolling for navigation links
 const navLinks = document.querySelectorAll("nav a");
 
