@@ -1,53 +1,410 @@
-// Smooth scrolling for navigation links
-const navLinks = document.querySelectorAll("nav a");
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>мικε | Senior Software Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container header-inner">
+        <div class="brand">
+        </div>
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    const targetId = event.target.getAttribute("href");
-    const targetElement = document.querySelector(targetId);
-    targetElement.scrollIntoView({ behavior: "smooth" });
-  });
-});
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
 
-// Dark/light mode toggle
-const themeToggle = document.getElementById("theme-toggle");
-const storedTheme = localStorage.getItem("theme");
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle dark mode">
+          🌙
+        </button>
+      </div>
+    </header>
 
-function applyTheme(theme) {
-  const isDark = theme === "dark";
-  document.body.classList.toggle("dark-mode", isDark);
-  themeToggle.textContent = isDark ? "☀️" : "🌙";
-  themeToggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
-  localStorage.setItem("theme", theme);
-}
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <p class="eyebrow">Senior Software Engineer</p>
+        <h1>Building scalable enterprise solutions and high-performance systems.</h1>
+        <p class="hero-text">
+          I lead architecture, development, and delivery for mission-critical web applications using .NET, React, and SQL Server.
+          My focus is on clean design, performance optimization, and mentoring engineering teams toward reliable product outcomes.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="button">Contact me</a>
+          <a href="#experience" class="button button-secondary">View experience</a>
+        </div>
+      </div>
+    </section>
 
-if (storedTheme) {
-  applyTheme(storedTheme);
-} else {
-  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  applyTheme(prefersDark ? "dark" : "light");
-}
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>About</h2>
+        </div>
+        <p>
+          I am a Senior Software Engineer with over a decade of experience delivering enterprise-grade web platforms, back-end services, and data-driven systems.
+          I specialize in designing scalable architectures, improving performance, and ensuring operational stability across cross-functional teams.
+        </p>
 
-themeToggle.addEventListener("click", () => {
-  const nextTheme = document.body.classList.contains("dark-mode") ? "light" : "dark";
-  applyTheme(nextTheme);
-});
+        <p>
+          My expertise covers full-stack development with React, ASP.NET Core, C#, and SQL Server. I build maintainable systems, enforce code quality, and support production-ready deployments
+          through automated testing, CI/CD practices, and performance tuning.
+        </p>
+      </div>
+    </section>
 
-// Get current year for footer
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Experience</h2>
+    </div>
 
-// Back-to-top button behavior
-const backToTopButton = document.getElementById("backToTop");
+    <div class="experience-item">
+      <h3>Senior Software Engineer</h3>
+      <p>Consultation & Technology Services | June 2022 - Present</p>
+      <ul>
+        <li>Owned architecture and implementation of enterprise web applications using React, C#, and ASP.NET Core.</li>
+        <li>Delivered resilient RESTful services and scalable back-end APIs aligned with business goals.</li>
+        <li>Led database design, query optimization, and performance tuning for SQL Server production environments.</li>
+        <li>Mentored developers, promoted best practices, and championed maintainable, testable solutions across the team.</li>
+      </ul>
+    </div>
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTopButton.classList.add("visible");
-  } else {
-    backToTopButton.classList.remove("visible");
-  }
-});
+    <div class="experience-item">
+      <h3>IT Manager</h3>
+      <p>IT Department Head | Nov 2006 - Oct 2011</p>
+      <ul>
+        <li>Directed IT operations and infrastructure strategies to ensure high availability for business systems.</li>
+        <li>Coached teams, managed cross-functional delivery, and improved incident response workflows.</li>
+        <li>Implemented security and governance policies that strengthened system reliability and reduced risk.</li>
+      </ul>
+    </div>
 
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  </div>
+</section>
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Skills</h2>
+        </div>
+        <ul>
+          <li>Front-End Development: ReactJS, KendoUI, Redux, HTML, CSS, JavaScript</li>
+          <li>Back-End Development: C#, ASP.NET Core, .NET, REST APIs, Microservices</li>
+          <li>Data Engineering: SQL Server, T-SQL, schema design, performance tuning</li>
+          <li>Engineering Leadership: architecture, mentoring, CI/CD, code quality, testing</li>
+          <li>Tools & Collaboration: Git, Jira, Visual Studio, Azure DevOps, team delivery</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <h4>Enterprise Multi-Tenant SaaS Migration</h4>
+            <p>
+              Architected and developed the migration of CulinarySuite from a single-tenant deployment model to a scalable multi-tenant SaaS platform.
+            </p>
+            <p>
+              The system supports food service operations including menu planning, recipe management, inventory control, nutrition analysis, forecasting, healthcare meal ordering, and third-party integrations with EHR, HL7, EDI, accounting, and supply chain systems.
+            </p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+              <li>Designed tenant-aware backend architecture.</li>
+              <li>Implemented secure tenant data segregation in SQL Server.</li>
+              <li>Enhanced API and service layers to support multi-tenant execution.</li>
+              <li>Reduced infrastructure duplication and deployment complexity.</li>
+              <li>Improved scalability and onboarding efficiency for new enterprise customers.</li>
+            </ul>
+            <p class="project-meta">ASP.NET Core, C#, SQL Server, Entity Framework Core, REST APIs, Azure DevOps</p>
+          </article>
+
+          <article class="project-card">
+            <h4>STAR Framework & BPM.io Integration</h4>
+            <p>
+              Led the integration of BPM.io into the STAR Framework to provide dynamic business process modeling and visualization capabilities.
+            </p>
+            <p><strong>Key Contributions:</strong></p>
+            <ul>
+              <li>Developed a system to dynamically generate BPM diagrams from JSON data.</li>
+              <li>Implemented real-time status overlays with color-coded task completion states.</li>
+            </ul>
+            <p><strong>Impact:</strong> Enabled seamless visualization of complex service creation workflows within the enterprise framework.</p>
+            <p class="project-meta">Angular 18, BPMN.js, TypeScript, JSON</p>
+          </article>
+
+          <article class="project-card">
+            <h4>AppGen: Low-Code Application Platform (LCAP)</h4>
+            <p>
+              Architected and developed AppGen, a comprehensive Low-Code Application Platform designed to automate the rapid delivery of enterprise web and mobile applications using Angular 2+, Kendo UI, and the Star Framework.
+            </p>
+            <p><strong>Core Capabilities:</strong></p>
+            <ul>
+              <li>Engineered a code generation engine producing structured Angular HTML and TypeScript for complex components (Forms, Grids, ListViews, Master-Detail).</li>
+              <li>Implemented flexible data modeling: SQL definitions, manual entry, CSV/XLSX imports with multi-database support (Oracle, MySQL, PostgreSQL, MariaDB).</li>
+              <li>Designed Trigger Architecture for injecting custom TypeScript logic at Pre/Post-Insert and validation lifecycle events.</li>
+              <li>Developed backend Rule Engine: DB queries, multi-channel notifications (Email, SMS), and REST API requests triggered by system events.</li>
+              <li>Integrated GitHub synchronization for local VS Code development workflows.</li>
+              <li>Built-in support for multi-lingual labels, custom theming, Lookups, File Attachments, and automated Charts/Reports/Dashboards.</li>
+            </ul>
+            <p><strong>Impact:</strong> Significantly reduced development lifecycles by automating CRUD operations and transaction management across multiple components.</p>
+            <p class="project-meta">Angular 2+, TypeScript, Kendo UI, Node.js, SQL Server, Oracle, PostgreSQL, GitHub API, REST APIs</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Enterprise E-commerce Platform</h4>
+            <p>
+              Delivered a scalable digital commerce solution supporting authentication,
+              catalog management, checkout flow, and customer analytics.
+            </p>
+            <p class="project-meta">React, Redux, KendoUI, Node.js, Express, MongoDB</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Real-Time Collaboration Platform</h4>
+            <p>
+              Built a live chat and collaboration experience with authenticated rooms,
+              notifications, and robust real-time messaging.
+            </p>
+            <p class="project-meta">React, Socket.io, Node.js, MongoDB</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Hospital Management System</h4>
+            <p>
+              Designed modules for patient records, appointment scheduling,
+              and medical workflow automation.
+            </p>
+            <p class="project-meta">C#, SQL, Node.js</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Payroll Automation System</h4>
+            <p>
+              Developed payroll tools for accurate salary calculations, reporting,
+              and employee compensation workflows.
+            </p>
+            <p class="project-meta">C#, SQL Server</p>
+          </article>
+
+          <article class="project-card">
+            <h4>HR & Labor Relations Suite</h4>
+            <p>
+              Built centralized case management and HR reporting capabilities
+              for employee relations and compliance.
+            </p>
+            <p class="project-meta">C#, SQL, Web Services</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Certifications</h2>
+        </div>
+        <ul>
+          <li>
+            Gemini Certified Educator Certificate,
+            Google, Oct 2025
+          </li>
+          <li>
+            DeepLearning.AI TensorFlow Developer Professional Certificate,
+            Coursera, Apr 2024
+          </li>
+          <li>Course Certificate for AI For Everyone, Coursera, Apr 2024</li>
+          <li>
+            The Advanced SQL Server Masterclass for Data Analysis, Udemy, Feb
+            2024
+          </li>
+          <li>
+            Communication Fundamentals: How To Communicate Better, Udemy, Jul
+            2023
+          </li>
+          <li>
+            Professional Diploma in Programming: MS Visual Studio, YAT Education
+            Centers, May 2023
+          </li>
+          <li>
+            CCNA Routing and Switching - Cisco Master Certificate, YAT Education
+            Centers, Nov 2017
+          </li>
+          <li>
+            International English Language Testing System Certificate, British
+            Council, Jan 2012
+          </li>
+          <li>
+            IELTS Certificate, AVA REWASE Computer & Information Center, Jun
+            2010
+          </li>
+          <li>3Ds Max 7 Master Certificate, YAT Education Centers, Jun 2006</li>
+          <li>English Conversation Course Level Two Certificate, Aug 2005</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+        </div>
+        <div class="contact-icons">
+          <ul class="social-icons">
+            <li>
+              <a
+                href="mailto:wall-e84@hotmail.com?subject=michaelmagdyg.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Outlook"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png"
+                  width="30"
+                  height="30"
+                  alt="Outlook"
+                />
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="https://www.facebook.com/michael.magdyg"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/174/174848.png"
+                  width="30"
+                  height="30"
+                  alt="Facebook"
+                />
+              </a>
+            </li> -->
+            <li>
+              <a
+                href="https://github.com/michaelmagdyg"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                  width="30"
+                  height="30"
+                  alt="GitHub"
+                />
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="https://www.instagram.com/michael.magdyg"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                  width="30"
+                  height="30"
+                  alt="Instagram"
+                />
+              </a>
+            </li> -->
+            <li>
+              <a
+                href="https://www.linkedin.com/in/michael-m-g"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                  width="30"
+                  height="30"
+                  alt="LinkedIn"
+                />
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                href="https://www.tiktok.com/@your_tiktok_username"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="TikTok"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png"
+                  width="30"
+                  height="30"
+                  alt="TikTok"
+                />
+              </a>
+            </li> -->
+            <!-- <li>
+              <a
+                href="https://twitter.com/michaelmagdyg"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Twitter"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/174/174876.png"
+                  width="30"
+                  height="30"
+                  alt="Twitter"
+                />
+              </a>
+            </li> -->
+            <li>
+              <a
+                href="https://wa.me/+201146244333?text=michaelmagdyg.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp"
+              >
+                <img
+                  class="whatsapp-icon"
+                  src="https://cdn-icons-png.flaticon.com/512/174/174879.png"
+                  width="30"
+                  height="30"
+                  alt="WhatsApp"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+  <div class="container">
+    <p align="center">
+      <a href="https://buymeacoffee.com/walle84h" target="_blank">
+        <img
+          src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-F7CA88?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black"
+          alt="Buy Me a Coffee"
+        />
+      </a>
+    </p>
+    <p>© <span id="currentYear"></span> мικε</p>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
