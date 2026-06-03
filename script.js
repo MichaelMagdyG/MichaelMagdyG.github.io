@@ -1,16 +1,27 @@
-// Disable right-click
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-//  alert("Right Click is disabled on this website.");
-});
-
-// Disable Ctrl+C
-document.addEventListener("keydown", function (e) {
-  if (e.ctrlKey && (e.key === "c" || e.key === "C")) {
+// Optional: attempt to prevent right-click, selection and copying.
+// Note: disabling these is not user-friendly, not foolproof, and may harm accessibility.
+document.addEventListener("DOMContentLoaded", () => {
+  // Prevent context menu, selection start, and copy/cut events at capture phase
+  const blockEvents = (e) => {
     e.preventDefault();
-   // alert("Copying is disabled on this website.");
-    return false;
-  }
+  };
+
+  ["contextmenu", "selectstart", "copy", "cut"].forEach((ev) => {
+    document.addEventListener(ev, blockEvents, { capture: true });
+  });
+
+  // Block common copy shortcuts (Ctrl/Cmd + C, Ctrl+Insert) at capture phase
+  document.addEventListener(
+    "keydown",
+    (e) => {
+      const key = (e.key || "").toLowerCase();
+      if ((e.ctrlKey || e.metaKey) && (key === "c" || key === "insert")) {
+        e.preventDefault();
+        return false;
+      }
+    },
+    true
+  );
 });
 
 // Smooth scrolling for navigation links
