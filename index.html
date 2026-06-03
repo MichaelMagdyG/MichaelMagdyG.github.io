@@ -3,16 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>мικε - Portfolio</title>
+    <title>мικε | Software Engineer</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="header-content">
-
+      <div class="container header-inner">
+        <div class="brand">
         </div>
-      
+
         <nav>
           <ul>
             <li><a href="#about">About</a></li>
@@ -23,24 +22,42 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle dark mode">
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle dark mode">
           🌙
         </button>
       </div>
     </header>
+
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <p class="eyebrow">Software Engineer</p>
+        <h1>Building scalable enterprise solutions and high-performance systems.</h1>
+        <p class="hero-text">
+          I lead architecture, development, and delivery for mission-critical web applications using .NET, React, and SQL Server.
+          My focus is on clean design, performance optimization, and mentoring engineering teams toward reliable product outcomes.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="button">Contact me</a>
+          <a href="#experience" class="button button-secondary">View experience</a>
+        </div>
+      </div>
+    </section>
 
     <section id="about" class="section">
       <div class="container">
         <div class="section-header">
           <h2>About</h2>
         </div>
-<p>
-  I am a Software Engineer specializing in building and maintaining web applications using .NET (C#), ReactJS, and SQL Server. I have experience developing full-stack solutions, including front-end interfaces with ReactJS and KendoUI, and back-end services using ASP.NET Core.
-</p>
+        <p>
+          I am a Senior Software Engineer with over a decade of experience delivering enterprise-grade web platforms, back-end services, and data-driven systems.
+          I specialize in designing scalable architectures, improving performance, and ensuring operational stability across cross-functional teams.
+        </p>
 
-<p>
-  I focus on writing clean, maintainable, and testable code, and contributing to stable and scalable systems. I work with SQL Server and T-SQL for database design, queries, and performance optimization. I collaborate with teams using structured development practices and version control systems.
-</p>
+        <p>
+          My expertise covers full-stack development with React, ASP.NET Core, C#, and SQL Server. I build maintainable systems, enforce code quality, and support production-ready deployments
+          through automated testing, CI/CD practices, and performance tuning.
+        </p>
       </div>
     </section>
 
@@ -51,25 +68,13 @@
     </div>
 
     <div class="experience-item">
-      <h3>Software Developer</h3>
-      <p>Solutions Development | June 2022 - Present</p>
+      <h3>Senior Software Engineer</h3>
+      <p>Consultation & Technology Services | June 2022 - Present</p>
       <ul>
-        <li>
-          Developed and maintained enterprise web applications using
-          ReactJS, C#, and ASP.NET Core, focusing on scalability and performance.
-        </li>
-        <li>
-          Designed and implemented RESTful APIs and backend services,
-          supporting front-end integration and business workflows.
-        </li>
-        <li>
-          Built and optimized SQL Server databases, including schema design,
-          complex queries, and performance tuning for production systems.
-        </li>
-        <li>
-          Contributed to feature delivery across full-stack components,
-          ensuring maintainable and testable code aligned with team standards.
-        </li>
+        <li>Owned architecture and implementation of enterprise web applications using React, C#, and ASP.NET Core.</li>
+        <li>Delivered resilient RESTful services and scalable back-end APIs aligned with business goals.</li>
+        <li>Led database design, query optimization, and performance tuning for SQL Server production environments.</li>
+        <li>Mentored developers, promoted best practices, and championed maintainable, testable solutions across the team.</li>
       </ul>
     </div>
 
@@ -77,18 +82,9 @@
       <h3>IT Manager</h3>
       <p>IT Department Head | Nov 2006 - Oct 2011</p>
       <ul>
-        <li>
-          Managed IT infrastructure and ensured high availability of internal systems
-          across daily business operations.
-        </li>
-        <li>
-          Led technical teams, assigning tasks, reviewing work, and supporting
-          troubleshooting and system maintenance.
-        </li>
-        <li>
-          Implemented IT policies and security procedures to improve system reliability
-          and reduce operational risk.
-        </li>
+        <li>Directed IT operations and infrastructure strategies to ensure high availability for business systems.</li>
+        <li>Coached teams, managed cross-functional delivery, and improved incident response workflows.</li>
+        <li>Implemented security and governance policies that strengthened system reliability and reduced risk.</li>
       </ul>
     </div>
 
@@ -100,17 +96,11 @@
           <h2>Skills</h2>
         </div>
         <ul>
-          <li>
-            Front-End Development: ReactJS, KendoUI, Redux, HTML, CSS,
-            JavaScript
-          </li>
-          <li>Back-End Development: C#, .NET/Core</li>
-          <li>Database Management: SQL Server, T-SQL</li>
-          <li>Tools & Technologies: Jira, Git, Visual Studio, Teams</li>
-          <li>
-            Other: Problem-solving, communication, software testing, code
-            optimization
-          </li>
+          <li>Front-End Development: ReactJS, KendoUI, Redux, HTML, CSS, JavaScript</li>
+          <li>Back-End Development: C#, ASP.NET Core, .NET, REST APIs, Microservices</li>
+          <li>Data Engineering: SQL Server, T-SQL, schema design, performance tuning</li>
+          <li>Engineering Leadership: architecture, mentoring, CI/CD, code quality, testing</li>
+          <li>Tools & Collaboration: Git, Jira, Visual Studio, Azure DevOps, team delivery</li>
         </ul>
       </div>
     </section>
@@ -120,88 +110,107 @@
         <div class="section-header">
           <h2>Projects</h2>
         </div>
-        <div class="project-item">
-          <ul>
-            <li>
-              <h4>E-commerce Platform Development</h4>
-              <p>
-                Developed a scalable e-commerce platform that supports user
-                authentication, product listing, and shopping cart
-                functionalities.
-              </p>
-              <p>
-                Technologies: ReactJS, Redux, KendoUI, Node.js, Express, MongoDB
-              </p>
-              <p>Role: Front-End Developer</p>
-            </li>
-            <li>
-              <h4>Real-Time Chat Application</h4>
-              <p>
-                Built a real-time chat application with user authentication,
-                chat rooms, and message notifications.
-              </p>
-              <p>
-                Technologies: ReactJS, Redux, KendoUI, Socket.io, Node.js,
-                MongoDB
-              </p>
-              <p>Role: Full-Stack Developer</p>
-            </li>
-          </ul>
-        </div>
-        <div class="project-item">
-          <ul>
-            <li>
-              <h4>Multi-Tenant Platform Migration</h4>
-              <p>
-                Transitioning from a single-tenant database to multi-tenant
-                databases.
-              </p>
-              <p>Technologies: C#, .NET/Core, SQL Server</p>
-              <p>Role: Software Developer</p>
-            </li>
-            <li>
-              <h4>Hospital Management</h4>
-              <p>
-                Managing patient records, scheduling appointments, and tracking
-                patient medical history.
-              </p>
-              <p>Technologies: C#, SQL, Node.js</p>
-              <p>Role: Developer</p>
-            </li>
-            <li>
-              <h4>Wage and Salary Management</h4>
-              <p>
-                Maintaining employee data and calculating salaries and wages.
-              </p>
-              <p>Technologies: C#, SQL</p>
-              <p>Role: Developer</p>
-            </li>
-            <li>
-              <h4>Business Card Creation</h4>
-              <p>Designing and printing professional business cards.</p>
-              <p>Technologies: C#</p>
-              <p>Role: Developer</p>
-            </li>
-            <li>
-              <h4>Employee & Labor Relations</h4>
-              <p>Centralized case management for HR professionals.</p>
-              <p>Technologies: C#, SQL</p>
-              <p>Role: Developer</p>
-            </li>
-            <li>
-              <h4>Restaurant Management</h4>
-              <p>
-                Streamlining guest service, financial tracking, and employee
-                management.
-              </p>
-              <p>Technologies: C#, SQL, Node.js</p>
-              <p>Role: Developer</p>
-            </li>
-          </ul>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <h4>Enterprise Multi-Tenant SaaS Migration</h4>
+            <p>
+              Architected and developed the migration of CulinarySuite from a single-tenant deployment model to a scalable multi-tenant SaaS platform.
+            </p>
+            <p>
+              The system supports food service operations including menu planning, recipe management, inventory control, nutrition analysis, forecasting, healthcare meal ordering, and third-party integrations with EHR, HL7, EDI, accounting, and supply chain systems.
+            </p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+              <li>Designed tenant-aware backend architecture.</li>
+              <li>Implemented secure tenant data segregation in SQL Server.</li>
+              <li>Enhanced API and service layers to support multi-tenant execution.</li>
+              <li>Reduced infrastructure duplication and deployment complexity.</li>
+              <li>Improved scalability and onboarding efficiency for new enterprise customers.</li>
+            </ul>
+            <p class="project-meta">ASP.NET Core, C#, SQL Server, Entity Framework Core, REST APIs, Azure DevOps</p>
+          </article>
+
+          <article class="project-card">
+            <h4>STAR Framework & BPM.io Integration</h4>
+            <p>
+              Led the integration of BPM.io into the STAR Framework to provide dynamic business process modeling and visualization capabilities.
+            </p>
+            <p><strong>Key Contributions:</strong></p>
+            <ul>
+              <li>Developed a system to dynamically generate BPM diagrams from JSON data.</li>
+              <li>Implemented real-time status overlays with color-coded task completion states.</li>
+            </ul>
+            <p><strong>Impact:</strong> Enabled seamless visualization of complex service creation workflows within the enterprise framework.</p>
+            <p class="project-meta">Angular 18, BPMN.js, TypeScript, JSON</p>
+          </article>
+
+          <article class="project-card">
+            <h4>AppGen: Low-Code Application Platform (LCAP)</h4>
+            <p>
+              Architected and developed AppGen, a comprehensive Low-Code Application Platform designed to automate the rapid delivery of enterprise web and mobile applications using Angular 2+, Kendo UI, and the Star Framework.
+            </p>
+            <p><strong>Core Capabilities:</strong></p>
+            <ul>
+              <li>Engineered a code generation engine producing structured Angular HTML and TypeScript for complex components (Forms, Grids, ListViews, Master-Detail).</li>
+              <li>Implemented flexible data modeling: SQL definitions, manual entry, CSV/XLSX imports with multi-database support (Oracle, MySQL, PostgreSQL, MariaDB).</li>
+              <li>Designed Trigger Architecture for injecting custom TypeScript logic at Pre/Post-Insert and validation lifecycle events.</li>
+              <li>Developed backend Rule Engine: DB queries, multi-channel notifications (Email, SMS), and REST API requests triggered by system events.</li>
+              <li>Integrated GitHub synchronization for local VS Code development workflows.</li>
+              <li>Built-in support for multi-lingual labels, custom theming, Lookups, File Attachments, and automated Charts/Reports/Dashboards.</li>
+            </ul>
+            <p><strong>Impact:</strong> Significantly reduced development lifecycles by automating CRUD operations and transaction management across multiple components.</p>
+            <p class="project-meta">Angular 2+, TypeScript, Kendo UI, Node.js, SQL Server, Oracle, PostgreSQL, GitHub API, REST APIs</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Enterprise E-commerce Platform</h4>
+            <p>
+              Delivered a scalable digital commerce solution supporting authentication,
+              catalog management, checkout flow, and customer analytics.
+            </p>
+            <p class="project-meta">React, Redux, KendoUI, Node.js, Express, MongoDB</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Real-Time Collaboration Platform</h4>
+            <p>
+              Built a live chat and collaboration experience with authenticated rooms,
+              notifications, and robust real-time messaging.
+            </p>
+            <p class="project-meta">React, Socket.io, Node.js, MongoDB</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Hospital Management System</h4>
+            <p>
+              Designed modules for patient records, appointment scheduling,
+              and medical workflow automation.
+            </p>
+            <p class="project-meta">C#, SQL, Node.js</p>
+          </article>
+
+          <article class="project-card">
+            <h4>Payroll Automation System</h4>
+            <p>
+              Developed payroll tools for accurate salary calculations, reporting,
+              and employee compensation workflows.
+            </p>
+            <p class="project-meta">C#, SQL Server</p>
+          </article>
+
+          <article class="project-card">
+            <h4>HR & Labor Relations Suite</h4>
+            <p>
+              Built centralized case management and HR reporting capabilities
+              for employee relations and compliance.
+            </p>
+            <p class="project-meta">C#, SQL, Web Services</p>
+          </article>
         </div>
       </div>
     </section>
-
+    
     <section id="certifications" class="section">
       <div class="container">
         <div class="section-header">
