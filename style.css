@@ -1,11 +1,67 @@
 /* Reset and Basic Styles */
+:root {
+  --bg: #f8f9fa;
+  --text: #333;
+  --header-bg: #212529;
+  --section-bg: #fff;
+  --section-border: #ddd;
+  --section-shadow: rgba(0, 0, 0, 0.1);
+  --section-overlay: rgba(0, 0, 0, 0.4);
+  --footer-bg: #333;
+  --footer-text: #fff;
+  --nav-hover: #555;
+  --toggle-bg: rgba(255, 255, 255, 0.15);
+  --toggle-border: rgba(255, 255, 255, 0.35);
+  --toggle-color: #fff;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa; /* Light gray background */
-  color: #333;
+  padding-top: 100px;
+  background-color: var(--bg);
+  color: var(--text);
   overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e5e5e5;
+}
+
+body.dark-mode header {
+  background-color: #0f1113;
+}
+
+body.dark-mode .section {
+  background-color: #1d1f25;
+  border-color: #2a2d33;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .section::before {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode footer {
+  background-color: #090a0c;
+  color: #dcdcdc;
+}
+
+body.dark-mode nav a {
+  color: #e5e5e5;
+}
+
+body.dark-mode nav a:hover {
+  background-color: #333;
+  color: #ffc107;
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffc107;
 }
 
 /* Custom Scrollbar Styles */
@@ -34,11 +90,16 @@ header {
   color: #fff;
   padding: 20px 0;
   text-align: center; /* Center align text */
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background-image: url("https://cdn.buymeacoffee.com/uploads/cover_images/2024/12/HPazznqSOv8Xjs8LBZ4H5tJPBrUdNw3WOd48d1Vk.jpg"); /* Replace with your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Container Styles */
@@ -46,6 +107,13 @@ header {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 /* Heading Styles */
@@ -70,11 +138,17 @@ h2 {
 }
 
 /* Navigation Styles */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 nav li {
@@ -91,9 +165,30 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #555;
+  background-color: var(--nav-hover);
   transform: scale(1.1); /* Slightly enlarge on hover */
   color: #ffc107; /* Change text color on hover */
+}
+
+.theme-toggle {
+  position: static;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--toggle-border);
+  border-radius: 50%;
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, color 0.3s;
+  font-size: 1.1rem;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* Section Styles */
@@ -129,6 +224,35 @@ footer {
   padding: 10px 0;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #212529;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1001;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .container {
@@ -162,7 +286,12 @@ footer {
 .social-icons img {
   width: 30px;
   height: 30px;
-  transition: transform 0.3s ease-in-out;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.social-icons a:hover img {
+  filter: grayscale(0%);
 }
 
 .social-icons img:hover {
