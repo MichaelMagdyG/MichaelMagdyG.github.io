@@ -118,7 +118,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Header Styling */
 header {
-  background: linear-gradient(180deg, #212529 0%, #212529 100%);
+  background: linear-gradient(180deg, rgba(33, 37, 41, 0.96) 0%, rgba(33, 37, 41, 0.9) 100%);
   color: #fff;
   padding: 18px 0;
   position: fixed;
