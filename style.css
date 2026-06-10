@@ -90,6 +90,10 @@ body.dark-mode nav a:hover {
   color: #ffc107;
 }
 
+body.dark-mode .hamburger span {
+  background-color: #fff;
+}
+
 body.dark-mode .theme-toggle {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.15);
@@ -395,21 +399,113 @@ footer p {
   transform: translateY(-4px);
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.mobile-nav {
+  display: flex;
+}
+
+.mobile-nav ul {
+  display: flex;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   header .container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
   }
 
-  nav ul {
-    flex-direction: column;
-    width: 100%;
+  .brand {
+    flex: 1;
   }
 
-  nav li {
-    margin: 5px 0;
+  .hamburger {
+    display: flex;
+    order: 2;
+  }
+
+  .theme-toggle {
+    order: 3;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
     width: 100%;
-    text-align: center;
+    max-height: 0;
+    background-color: #1a1d22;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 999;
+  }
+
+  .mobile-nav.active {
+    max-height: 400px;
+  }
+
+  .mobile-nav ul {
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav li {
+    border-bottom: 1px solid #2a2e35;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #e5e5e5;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .mobile-nav a:hover {
+    background-color: #333;
+    color: #ffc107;
+  }
+
+  body.dark-mode .mobile-nav {
+    background-color: #1a1d22;
   }
 
   .hero-section {
@@ -421,9 +517,8 @@ footer p {
     padding: 90px 0 40px;
   }
 
-  /* Increase top padding on small screens to account for taller stacked header */
   body {
-    padding-top: 220px;
+    padding-top: 70px;
   }
 }
 

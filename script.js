@@ -22,6 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     true
   );
+
+  // Hamburger menu toggle
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobile-nav");
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileNav.classList.toggle("active");
+      hamburger.setAttribute("aria-expanded", hamburger.classList.contains("active"));
+    });
+
+    // Close menu when a link is clicked
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        mobileNav.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 });
 
 // Smooth scrolling for navigation links
@@ -32,10 +53,8 @@ navLinks.forEach((link) => {
     event.preventDefault();
     const targetId = link.getAttribute("href");
     const targetElement = document.querySelector(targetId);
-    const headerHeight =
-      document.querySelector("header").offsetHeight;
-    const targetPosition =
-      targetElement.offsetTop - headerHeight - 10;
+    const headerHeight = document.querySelector("header").offsetHeight;
+    const targetPosition = targetElement.offsetTop - headerHeight - 10;
     window.scrollTo({
       top: targetPosition,
       behavior: "smooth",
