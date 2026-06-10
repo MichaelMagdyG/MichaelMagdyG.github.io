@@ -29,10 +29,17 @@ const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    const targetId = event.target.getAttribute("href");
+    event.preventDefault();
+    const targetId = link.getAttribute("href");
     const targetElement = document.querySelector(targetId);
-    targetElement.scrollIntoView({ behavior: "smooth" });
+    const headerHeight =
+      document.querySelector("header").offsetHeight;
+    const targetPosition =
+      targetElement.offsetTop - headerHeight - 10;
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
   });
 });
 

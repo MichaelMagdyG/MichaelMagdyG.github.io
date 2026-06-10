@@ -387,18 +387,21 @@ footer p {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-  .container {
-    padding: 10px;
+  header .container {
+    flex-direction: column;
   }
 
   nav ul {
-    text-align: left;
+    flex-direction: column;
+    width: 100%;
   }
 
   nav li {
-    display: block;
-    margin: 10px 0;
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
   }
+}
 
   .hero-section {
     min-height: 420px;
@@ -408,7 +411,6 @@ footer p {
   .hero-content {
     padding: 90px 0 40px;
   }
-}
 
 .project-grid {
   display: grid;
