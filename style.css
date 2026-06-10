@@ -59,7 +59,7 @@ body.dark-mode .project-card {
   color: #e5e5e5;
 }
 
-body.dark-mode .project-card h4,
+body.dark-mode .project-card h3,
 body.dark-mode .project-card p,
 body.dark-mode .project-card .project-meta {
   color: #e5e5e5;
@@ -137,6 +137,14 @@ header {
 }
 
 header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Ensure header-inner class is supported when used in HTML */
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -257,6 +265,8 @@ nav a:hover {
   background-position: center;
   color: #f8f9fa;
 }
+
+
 
 .hero-content {
   padding: 100px 0 60px;
@@ -401,7 +411,6 @@ footer p {
     width: 100%;
     text-align: center;
   }
-}
 
   .hero-section {
     min-height: 420px;
@@ -411,6 +420,12 @@ footer p {
   .hero-content {
     padding: 90px 0 40px;
   }
+
+  /* Increase top padding on small screens to account for taller stacked header */
+  body {
+    padding-top: 220px;
+  }
+}
 
 .project-grid {
   display: grid;
@@ -431,7 +446,7 @@ footer p {
   box-shadow: 0 20px 50px rgba(33, 37, 41, 0.08);
 }
 
-.project-card h4 {
+.project-card h3 {
   margin-top: 0;
   margin-bottom: 12px;
 }
