@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   padding-top: 70px;
@@ -26,19 +26,21 @@ body {
 }
 
 body.dark-mode {
-  background-color: #060708;
-  color: #e5e5e5;
+  background-color: #0b0f19;
+  color: #e2e8f0;
 }
 
 body.dark-mode header {
-  background-color: #090b0f;
+  background-color: rgba(9, 11, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .section {
-  background-color: #111316;
-  border-color: #23272d;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  color: #e5e5e5;
+  background-color: #111827;
+  border-color: #1f2937;
+  color: #e2e8f0;
 }
 
 body.dark-mode .section::before {
@@ -54,9 +56,10 @@ body.dark-mode .section-header h2 {
 }
 
 body.dark-mode .project-card {
-  background-color: #1a1c22;
-  border-color: #2e333d;
-  color: #e5e5e5;
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -118,7 +121,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Header Styling */
 header {
-  background: linear-gradient(180deg, #212529 0%, #212529 100%);
+  background: rgba(33, 37, 41, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #fff;
   padding: 18px 0;
   position: fixed;
@@ -126,7 +131,8 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Container Styles */
@@ -330,10 +336,9 @@ nav a:hover {
 
 /* Section Styles */
 .section {
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: var(--section-bg); /* White background for sections */
   border-bottom: 1px solid var(--section-border);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); /* Add a subtle shadow */
   position: relative;
   transition: box-shadow 0.3s; /* Added box-shadow transition */
   scroll-margin-top: 85px;
@@ -351,7 +356,23 @@ nav a:hover {
 }
 
 .section:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+  /* Subtle hover if needed */
+}
+
+/* Scroll Animation Styles */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card.reveal-on-scroll {
+  transition-duration: 0.6s;
 }
 
 /* Footer Styles */
@@ -525,19 +546,20 @@ footer p {
 }
 
 .project-card {
-  background-color: #f7f9fc;
-  border: 1px solid #e3e8ef;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 60px rgba(33, 37, 41, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .project-cover {

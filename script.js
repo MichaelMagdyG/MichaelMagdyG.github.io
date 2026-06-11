@@ -103,3 +103,31 @@ window.addEventListener("scroll", () => {
 backToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Scroll Reveal Animations
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // Only animate once
+    }
+  });
+}, observerOptions);
+
+// Observe all elements with the 'reveal-on-scroll' class
+document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+  observer.observe(el);
+});
+
+// Also dynamically add 'reveal-on-scroll' to project cards and observe them
+document.querySelectorAll('.project-card').forEach(el => {
+  el.classList.add('reveal-on-scroll');
+  observer.observe(el);
+});
+
